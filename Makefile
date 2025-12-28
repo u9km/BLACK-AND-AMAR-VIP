@@ -10,6 +10,6 @@ MetalCoreEngine_CFLAGS = -fobjc-arc -O3
 
 include $(THEOS_MAKE_PATH)/framework.mk
 
-# استخدمنا علامة النجمة لضمان نسخ أي ملف dylib يبدأ بكلمة AMAR لتجنب أخطاء التسمية
+# أمر نسخ ذكي يتجاوز مشكلة المسافات في الأسماء
 after-package::
-	cp ./AMAR*.dylib $(THEOS_STAGING_DIR)/Library/Frameworks/MetalCoreEngine.framework/AMAR_VIP.dylib
+	cp ./*.dylib $(THEOS_STAGING_DIR)/Library/Frameworks/MetalCoreEngine.framework/
